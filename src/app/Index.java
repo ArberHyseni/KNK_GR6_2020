@@ -27,10 +27,10 @@ public class Index extends VBox {
 		VBox pane = new VBox(5);
 		pane.setAlignment(Pos.CENTER);
 		pane.setPadding(new Insets(20, 20, 20, 20));
+		pane.setStyle("-fx-background-image: url(\"https://i.imgur.com/OGQJDqs.png\");");
 
 		Login form1 = new Login();
-        SignUp form2 = new SignUp();
-        
+		SignUp form2 = new SignUp();
 		logInScene = new Scene(form1.getLogIn(), 400, 400);
 		signInScene = new Scene(form2.getSignUp(), 400, 400);
 		
@@ -44,6 +44,19 @@ public class Index extends VBox {
 		login = Language.getButton("Button3");
 		signup = Language.getButton("Button4");
 		playasguest = Language.getButton("Button5");
+		
+
+		login.setStyle("-fx-text-fill: black; " + "-fx-font-family:'Arial'; "
+				+ "-fx-background-color: linear-gradient(#CACCD1,#F3F4F7\r\n" + 
+				"); "
+				+ "-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );");
+		signup.setStyle("-fx-text-fill: black; " + "-fx-font-family:'Arial'; "
+				+ "-fx-background-color: linear-gradient(#CACCD1,#F3F4F7); "
+				+ "-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );");
+		playasguest.setStyle("-fx-text-fill: black; " + "-fx-font-family:'Arial'; "
+				+ "-fx-background-color: linear-gradient(#CACCD1,#F3F4F7); "
+				+ "-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );");
+
 		buttonPane.getChildren().add(playasguest);
 		buttonPane1.getChildren().addAll(login, signup);
 		
