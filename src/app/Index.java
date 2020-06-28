@@ -58,15 +58,17 @@ public class Index extends VBox {
 				+ "-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );");
 		buttonPane.getChildren().add(playasguest);
 		buttonPane1.getChildren().addAll(login, signup);
-		
+		//onclick action
 		login.setOnAction(e -> {
 			(Main.window).setScene(logInScene);
 			(Main.window).setTitle(Language.getLabel("Button3").getText());
-		});
+        });
+        //onclick action
 		signup.setOnAction(e -> {
 			(Main.window).setScene(signInScene);
 			(Main.window).setTitle(Language.getLabel("Button4").getText());
-		});
+        });
+        //on click action
 		playasguest.setOnAction(e -> {
 			PlayAsGuest form3 = new PlayAsGuest("Guest"+(int)(Math.random()*100000));
 			Scene gameScene = form3.guest();
@@ -92,7 +94,7 @@ public class Index extends VBox {
 		});
 		languageButtons.getChildren().addAll(alBtn, enBtn);
 		languageButtons.setAlignment(Pos.CENTER);
-		
+		//get label from Languages
 		welcome = Language.getLabel("label14");
 		welcome.setPadding(new Insets(3, 3, 3, 3));
 		welcome.setFont(Font.font("Arial", FontWeight.BOLD, FontPosture.REGULAR, 20));
