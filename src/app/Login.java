@@ -48,8 +48,12 @@ public class Login extends GridPane {
 		pane.setHgap(10);
 		pane.setVgap(10);
 		pane.setStyle("-fx-background-image: url(\"https://i.imgur.com/OGQJDqs.png\");");
-
+        //create button with Back on it
 		Button backBtn = new Button("Back");
+		//add css to buttons
+		backBtn.setStyle("-fx-text-fill: black; " + "-fx-font-family:'Arial'; "
+				+ "-fx-background-color: linear-gradient(#CACCD1,#F3F4F7); "
+				+ "-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );");
 		backBtn.setOnAction(e -> {
 			cleanForm();
 			//Specify the scene to be used on this stage
@@ -67,27 +71,25 @@ public class Login extends GridPane {
 		pane.add(password, 0, 2);
 		pane.add(passwordTxt, 1, 2);
 		pane.add(resultLabel,0,4,2,1);
-
 		Button logInBtn = Language.getButton("Button3");
+		logInBtn.setStyle("-fx-text-fill: black; " + "-fx-font-family:'Arial'; "
+				+ "-fx-background-color: linear-gradient(#CACCD1,#F3F4F7); "
+				+ "-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );");
 		logInBtn.setOnAction(e -> logInAction());
 		pane.setOnKeyPressed(e -> {if(e.getCode() == KeyCode.ENTER) 
 									logInAction();});
 		pane.add(logInBtn, 1, 3);
 		GridPane.setHalignment(logInBtn, HPos.RIGHT);
-
 		final Text actionTarget = new Text();
 		pane.add(actionTarget, 1, 4);
-
 		return pane;
 	}
-
 	public void cleanForm() {
 		emailTxt.setText("");
 		emailTxt.setStyle("-fx-background:white;");
 		passwordTxt.setText("");
 		passwordTxt.setStyle("-fx-background:white;");
 	}
-	
 	public void removeErrors() {
 		emailTxt.setStyle("-fx-background:white;");
 		passwordTxt.setStyle("-fx-background:white;");
