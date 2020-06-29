@@ -1,8 +1,8 @@
 package app;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -15,6 +15,7 @@ import utils.Session;
 
 public class PersonalScores 
 {
+	// Session Info
 	private String fullName = Session.getFullName();
 	private int totalScore, ones, twos, threes, fours, fives, sixes, noOfGames;
 	private Label player = Language.getLabel("label15");
@@ -27,6 +28,7 @@ public class PersonalScores
 	private Label fivesLbl = new Label(Integer.toString(fives));
 	private Label sixesLbl = new Label(Integer.toString(sixes));
 	private Label noOfGamesLbl = new Label(Integer.toString(noOfGames));
+	// For Language config
 	private Label totalScoreTxt = Language.getLabel("label20"); 
 	private Label onesTxt = Language.getLabel("label21");
 	private Label twosTxt = Language.getLabel("label22");
@@ -39,6 +41,7 @@ public class PersonalScores
 
 	public void getStage3()
 	{
+		// Sql query to get player_statistics
 		String query = "SELECT * "
 					 + "FROM player_statistics p "
 					 + "INNER JOIN users u ON u.idusers = p.userId "
@@ -54,7 +57,7 @@ public class PersonalScores
 			fours = result.getInt("fours");
 			fives = result.getInt("fives");
 			sixes = result.getInt("sixes");
-			noOfGames = result.getInt("noOfGames");
+			noOfGames = result.getInt("noOfGames");  // number of the games
 			totalScoreLbl.setText(totalScoreTxt.getText() + String.valueOf(totalScore));
 			onesLbl.setText(onesTxt.getText() + String.valueOf(ones));
 			twosLbl.setText(twosTxt.getText()  + String.valueOf(twos));
@@ -71,6 +74,7 @@ public class PersonalScores
 		BorderPane pane = new BorderPane();
 		StatusBar statusBar = new StatusBar();
 		VBox vbox = new VBox(10);
+		
 		vbox.getChildren().addAll(fullNameTxt, totalScoreLbl, onesLbl, twosLbl, threesLbl, foursLbl, fivesLbl, sixesLbl, noOfGamesLbl);
 		vbox.setAlignment(Pos.CENTER);
 		Stage stage3 = new Stage();  
@@ -82,5 +86,6 @@ public class PersonalScores
 		stage3.setTitle(personalScores.getText());
 				
 		stage3.show();
+		
 	}
 }
