@@ -1,5 +1,5 @@
 # Grupi 6 KNK
 
 Ky eshte repo per projektin tone ne Human-Computer Interaction(Komuniki Njeri-Kompjuter).   
-Gjithcka cka duhet bere eshte krijimi i nje projekti me te gjitha files qe jane ne kete repo.
+Gjithcka cka duhet bere eshte krijimi i nje projekti me te gjitha files qe jane ne kete repo.  
 Shpresoj te iu pelqeje!
