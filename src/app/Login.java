@@ -25,18 +25,14 @@ import utils.Language;
 import utils.Session;
 
 public class Login extends GridPane {
-	
 	private Label email = new Label();
 	private Label password;
 	private Label resultLabel1;
 	private Label resultLabel2;
-	
 	public static TextField emailTxt = new TextField();
 	public static PasswordField passwordTxt = new PasswordField();
 	public static Label resultLabel = new Label();
 	public static Scene gameScene;
-
-
 	public GridPane getLogIn() {
 		email = Language.getLabel("label1");
 		resultLabel1 = Language.getLabel("TextField1");
@@ -98,6 +94,7 @@ public class Login extends GridPane {
 	}
 	public void logInAction()
 	{
+        //validate email from Validator.java function and print string with red color
 		Validator.emailValidate(Login.emailTxt, "Invalid Email Address!");
 		logIn();
 		cleanForm();
