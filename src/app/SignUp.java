@@ -43,8 +43,7 @@ public class SignUp extends GridPane {
 		lastName = Language.getLabel("label11");
 		email = Language.getLabel("label12");
 		password = Language.getLabel("label13");
-		
-
+		//add gridpane
 		GridPane pane = new GridPane();
 		pane.setAlignment(Pos.CENTER);
 		pane.setPadding(new Insets(20));
@@ -62,7 +61,7 @@ public class SignUp extends GridPane {
 				+ "-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );");
 		formName = Language.getText("text2");
 		formName.setFont(Font.font("Arial", FontWeight.BOLD, FontPosture.REGULAR, 20));
-
+		//create hbox with 120 spacing
 		HBox title = new HBox(120);
 		title.getChildren().addAll(formName, backBtn);
 
@@ -76,7 +75,6 @@ public class SignUp extends GridPane {
 		pane.add(password, 0, 4);
 		pane.add(passwordTextField, 1, 4);
 		pane.add(errorLabel, 0, 6, 3, 3);
-
 		Button signUpBtn = new Button(Language.getLabel("Button4").getText());
 		signUpBtn.setStyle("-fx-text-fill: black; " + "-fx-font-family:'Arial'; "
 				+ "-fx-background-color: linear-gradient(#CACCD1,#F3F4F7); "
@@ -87,10 +85,8 @@ public class SignUp extends GridPane {
 									signUpAction();});
 		pane.add(signUpBtn, 1, 5);
 		GridPane.setHalignment(signUpBtn, HPos.RIGHT);
-
 		final Text actionTarget = new Text();
 		pane.add(actionTarget, 1, 9);
-
 		return pane;
 	}
 
@@ -127,6 +123,7 @@ public class SignUp extends GridPane {
 		{
 			if(checkEmail(emailTextField.getText())) {
 				addUser(firstNameTextField.getText(), lastNameTextField.getText(), emailTextField.getText().toLowerCase(), passwordTextField.getText());
+				//add css
 				errorLabel.setStyle("-fx-text-fill: green");
 				errorLabel.setText(Language.getLabel("TextField7").getText() + "\n" + Language.getLabel("TextField8").getText());
 			} else {
@@ -181,8 +178,9 @@ public class SignUp extends GridPane {
 			String query = "SELECT * FROM users WHERE email = ?";
 			PreparedStatement preparedStatement = DBConnection.getConnection().prepareStatement(query);
 			preparedStatement.setString(1, email);
+			//execute query
 			ResultSet rez = preparedStatement.executeQuery();
-	
+			//move the cursor forward one row
 			return !rez.next();
 		} catch (SQLException ex) {
 			ex.printStackTrace();
