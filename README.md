@@ -1,5 +1,4 @@
 # Grupi 6 KNK
 
-Ky eshte repo per projektin tone ne Human-Computer Interaction(Komuniki Njeri-Kompjuter).   
-Gjithcka cka duhet bere eshte krijimi i nje projekti me te gjitha files qe jane ne kete repo.  
-Shpresoj te ju pelqeje!
+Në kuadër të lëndës Komunikimi Njeri-Kompjuter kemi zhvilluar një project I cili ka të bëjë me zhvillimin e sistemit interaktiv argëtuese për hedhjen e zarit (fatit).
+Projekti është zhvilluar në gjuhën programese JavaFX ndërsa si IDE është përdorur Eclipse.
