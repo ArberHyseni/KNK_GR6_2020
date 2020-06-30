@@ -79,6 +79,7 @@ public class Index extends VBox {
 		HBox languageButtons = new HBox(13);
 		Button alBtn = new Button();
 		Button enBtn = new Button();
+		//get al. flag image from img folder
 		Image alImg = new Image("img/al1.png");
 		Image enImg = new Image("img/en1.png");
 		alBtn.setGraphic(new ImageView(alImg));
