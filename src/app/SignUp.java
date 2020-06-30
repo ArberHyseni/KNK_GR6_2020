@@ -51,7 +51,8 @@ public class SignUp extends GridPane {
 		pane.setVgap(10);
 		pane.setStyle("-fx-background-image: url(\"https://i.imgur.com/OGQJDqs.png\");");
 
-		Button backBtn = new Button("Back");
+		Button backBtn = new Button();
+		backBtn = Language.getButton("Button6");
 		backBtn.setOnAction(e -> {
 			cleanForm();
 			(Main.window).setScene(Main.indexScene);
@@ -75,7 +76,8 @@ public class SignUp extends GridPane {
 		pane.add(password, 0, 4);
 		pane.add(passwordTextField, 1, 4);
 		pane.add(errorLabel, 0, 6, 3, 3);
-		Button signUpBtn = new Button(Language.getLabel("Button4").getText());
+		Button signUpBtn = new Button();
+		signUpBtn = Language.getButton("Button4");
 		signUpBtn.setStyle("-fx-text-fill: black; " + "-fx-font-family:'Arial'; "
 				+ "-fx-background-color: linear-gradient(#CACCD1,#F3F4F7); "
 				+ "-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );");

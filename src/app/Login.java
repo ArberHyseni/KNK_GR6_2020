@@ -45,7 +45,8 @@ public class Login extends GridPane {
 		pane.setVgap(10);
 		pane.setStyle("-fx-background-image: url(\"https://i.imgur.com/OGQJDqs.png\");");
         //create button with Back on it
-		Button backBtn = new Button("Back");
+		Button backBtn = new Button();
+		backBtn=Language.getButton("Button6");
 		//add css to buttons
 		backBtn.setStyle("-fx-text-fill: black; " + "-fx-font-family:'Arial'; "
 				+ "-fx-background-color: linear-gradient(#CACCD1,#F3F4F7); "
