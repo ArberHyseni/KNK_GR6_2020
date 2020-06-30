@@ -58,7 +58,9 @@ public class Language {
 
 		return MessageFormat.format(bundle.getString(key), args);
 
-	}public static StringBinding createStringBinding(String key, Object... args) {
+	}
+
+	public static StringBinding createStringBinding(String key, Object... args) {
 		return Bindings.createStringBinding(() -> get(key, args), locale);
 	}
 
