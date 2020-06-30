@@ -58,4 +58,43 @@ public class Language {
 
 		return MessageFormat.format(bundle.getString(key), args);
 
+	}public static StringBinding createStringBinding(String key, Object... args) {
+		return Bindings.createStringBinding(() -> get(key, args), locale);
 	}
+
+	public static Label getLabel(String key, Object... args) {
+		Label label = new Label();
+		label.textProperty().bind(createStringBinding(key, args));
+		return label;
+	}
+
+	public static Button getButton(String key, Object... args) {
+		Button btn = new Button();
+		btn.textProperty().bind(createStringBinding(key, args));
+		return btn;
+	}
+
+	public static Menu getMenu(String key, Object... args) {
+		Menu menu = new Menu();
+		menu.textProperty().bind(createStringBinding(key, args));
+		return menu;
+	}
+	public static MenuItem getMenuItem(String key, Object...args)
+	{
+		MenuItem menuItem = new MenuItem();
+		menuItem.textProperty().bind(createStringBinding(key,args));
+		return menuItem;
+	}
+	public static Text getText(String key, Object...args)
+	{
+		Text text = new Text();
+		text.textProperty().bind(createStringBinding(key,args));
+		return text;
+	}
+	
+	public static TableColumn getTblColumn(String key, Object... args) {
+		TableColumn<String, Scores> column = new TableColumn<>();
+		column.textProperty().bind(createStringBinding(key, args));
+		return column;
+	}
+}
